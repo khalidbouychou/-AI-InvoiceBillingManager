@@ -164,7 +164,7 @@ function RevenueCard() {
               className="text-[38px] font-semibold leading-none text-gray-900"
               style={{ fontFamily: '"Geist","Inter",sans-serif', fontVariantNumeric: "tabular-nums", letterSpacing: "-0.02em" }}
             >
-              $22,375
+              22,375 MAD
             </span>
           </div>
         </div>
@@ -198,7 +198,7 @@ function InvoiceCard() {
         <Pill>Sent</Pill>
       </div>
       <div className="space-y-1.5">
-        {[["Design sprint", "$3,200"], ["Development · 40h", "$3,800"]].map(([d, a]) => (
+        {[["Design sprint", "3,200 MAD"], ["Development · 40h", "3,800 MAD"]].map(([d, a]) => (
           <div key={d} className="flex items-center justify-between text-[12.5px]">
             <span className="text-gray-500">{d}</span>
             <span className="text-gray-900 font-medium tabular">{a}</span>
@@ -207,7 +207,7 @@ function InvoiceCard() {
       </div>
       <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-100">
         <span className="text-[11px] uppercase tracking-wide text-gray-400 font-semibold">Total</span>
-        <span className="text-[16px] font-semibold tabular" style={{ color: BRAND_DARK }}>$7,595</span>
+        <span className="text-[16px] font-semibold tabular" style={{ color: BRAND_DARK }}>7,595 MAD</span>
       </div>
       <Footer subtitle="Nova Retail Group" />
     </PreviewCard>
@@ -217,9 +217,9 @@ function InvoiceCard() {
 /* Card 3 — Overdue */
 function OverdueCard() {
   const rows = [
-    { c: "Brightline Studios", a: "$3,787", d: "8d" },
-    { c: "Peak Fitness", a: "$1,628", d: "15d" },
-    { c: "Nova Retail", a: "$900", d: "20d" },
+    { c: "Brightline Studios", a: "3,787 MAD", d: "8d" },
+    { c: "Peak Fitness", a: "1,628 MAD", d: "15d" },
+    { c: "Nova Retail", a: "900 MAD", d: "20d" },
   ];
   return (
     <PreviewCard width={320}>
@@ -262,7 +262,7 @@ function ReceiptCard() {
         <div className="text-[13px] font-medium text-gray-900">Adobe Inc.</div>
         <div className="flex items-center justify-between text-[12px] text-gray-600 mt-1">
           <span>Creative Cloud · ×1</span>
-          <span className="tabular font-semibold text-gray-900">$54.99</span>
+          <span className="tabular font-semibold text-gray-900">54.99 MAD</span>
         </div>
       </div>
       <Footer subtitle="Image → invoice" />
@@ -286,7 +286,7 @@ function ReminderCard() {
           <span className="text-[12px] font-semibold text-gray-900">Friendly nudge</span>
         </div>
         <p className="text-[12px] text-gray-500 leading-snug">
-          "Hi Nova — just a gentle reminder that invoice INV-0006 for $2,400 was due last week…"
+          "Hi Nova — just a gentle reminder that invoice INV-0006 for 2,400 MAD was due last week…"
         </p>
       </div>
       <Footer subtitle="One click to send" />
@@ -308,7 +308,7 @@ function PaidCard() {
         className="text-[34px] font-semibold leading-none text-gray-900"
         style={{ fontFamily: '"Geist","Inter",sans-serif', fontVariantNumeric: "tabular-nums", letterSpacing: "-0.02em" }}
       >
-        $3,472
+        3,472 MAD
       </div>
       <div className="flex items-center gap-1 mt-3">
         {Array.from({ length: 8 }).map((_, i) => (

@@ -206,14 +206,14 @@ function InvoicePreview({ invoice, settings }) {
       </div>
 
       {/* items */}
-      <div className="grid grid-cols-[1fr_60px_90px_90px] gap-3 pb-2 border-b border-[var(--ink)] text-[10px] uppercase tracking-wider text-[var(--ink-muted)] font-semibold">
+      <div className="grid grid-cols-[1fr_56px_112px_112px] gap-3 pb-2 border-b border-[var(--ink)] text-[10px] uppercase tracking-wider text-[var(--ink-muted)] font-semibold">
         <span>Description</span>
         <span className="text-right">Qty</span>
         <span className="text-right">Rate</span>
         <span className="text-right">Amount</span>
       </div>
       {(invoice.items || []).map((it, i) => (
-        <div key={i} className="grid grid-cols-[1fr_60px_90px_90px] gap-3 py-2.5 border-b border-[var(--border)] text-sm">
+        <div key={i} className="grid grid-cols-[1fr_56px_112px_112px] gap-3 py-2.5 border-b border-[var(--border)] text-sm">
           <span className="text-[var(--ink)]">{it.description || "—"}</span>
           <span className="text-right tabular text-[var(--ink-muted)]">{Number(it.quantity)}</span>
           <span className="text-right tabular text-[var(--ink-muted)]">{formatMoney(it.rate, currency)}</span>

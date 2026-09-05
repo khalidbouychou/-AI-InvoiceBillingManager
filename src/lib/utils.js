@@ -10,6 +10,7 @@ export function formatNumber(n, opts = {}) {
 }
 
 export const CURRENCIES = [
+  { code: "MAD", symbol: "د.م." },
   { code: "USD", symbol: "$" },
   { code: "EUR", symbol: "€" },
   { code: "GBP", symbol: "£" },
@@ -19,7 +20,7 @@ export const CURRENCIES = [
   { code: "JPY", symbol: "¥" },
 ];
 
-export function formatMoney(amount, currency = "USD") {
+export function formatMoney(amount, currency = "MAD") {
   const n = Number(amount) || 0;
   try {
     return new Intl.NumberFormat("en-US", {
@@ -29,7 +30,7 @@ export function formatMoney(amount, currency = "USD") {
       maximumFractionDigits: 2,
     }).format(n);
   } catch {
-    return `$${n.toFixed(2)}`;
+    return `${n.toFixed(2)} ${currency}`;
   }
 }
 

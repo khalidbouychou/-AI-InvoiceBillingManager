@@ -6,6 +6,9 @@
  * no changes.
  */
 import { store, computeTotals, round2, effectiveStatus, nid } from "./store";
+import { formatMoney } from "@/lib/utils";
+
+const money = (n) => formatMoney(n, store.settings.currency);
 
 const delay = (ms = 280) => new Promise((r) => setTimeout(r, ms));
 const clone = (o) => JSON.parse(JSON.stringify(o));
@@ -180,7 +183,7 @@ export const mock = {
       const inv = {
         id: nid("inv"), client_id: payload.client_id || null, invoice_number: number,
         status: payload.status || "draft", issue_date: payload.issue_date || todayStr(), due_date: payload.due_date || null,
-        currency: payload.currency || "USD", tax_rate: num(payload.tax_rate), discount: totals.discount,
+        currency: payload.currency || "MAD", tax_rate: num(payload.tax_rate), discount: totals.discount,
         subtotal: totals.subtotal, tax_amount: totals.taxAmount, total: totals.total,
         notes: payload.notes || "", terms: payload.terms || "",
         paid_at: payload.status === "paid" ? nowIso() : null, created_at: nowIso(),
@@ -315,7 +318,7 @@ export const mock = {
     },
     async create(payload) {
       await delay();
-      const exp = { id: nid("exp"), vendor: payload.vendor || "", category: payload.category || "General", expense_date: payload.expense_date || todayStr(), amount: num(payload.amount), currency: payload.currency || "USD", notes: payload.notes || "", created_at: nowIso() };
+      const exp = { id: nid("exp"), vendor: payload.vendor || "", category: payload.category || "General", expense_date: payload.expense_date || todayStr(), amount: num(payload.amount), currency: payload.currency || "MAD", notes: payload.notes || "", created_at: nowIso() };
       store.expenses.unshift(exp);
       return clone(exp);
     },
@@ -429,9 +432,9 @@ export const mock = {
     async receiptParse() {
       await delay(1100);
       const samples = [
-        { vendor: "Adobe Inc.", currency: "USD", category: "Software", subtotal: 94.97, tax: 6.88, total: 101.85, notes: "", lineItems: [{ description: "Creative Cloud All Apps", quantity: 1, rate: 54.99 }, { description: "Adobe Stock — 10 credits", quantity: 1, rate: 29.99 }, { description: "Extra storage (1TB)", quantity: 1, rate: 9.99 }] },
-        { vendor: "Blue Bottle Coffee", currency: "USD", category: "Meals", subtotal: 21, tax: 1.84, total: 22.84, notes: "", lineItems: [{ description: "Cappuccino", quantity: 2, rate: 5.5 }, { description: "Almond Croissant", quantity: 1, rate: 4.75 }, { description: "Cold Brew (L)", quantity: 1, rate: 5.25 }] },
-        { vendor: "Amazon Web Services", currency: "USD", category: "Hosting", subtotal: 108.51, tax: 0, total: 108.51, notes: "Monthly usage", lineItems: [{ description: "EC2 t3.medium (hrs)", quantity: 744, rate: 0.0416 }, { description: "RDS Postgres", quantity: 744, rate: 0.034 }] },
+        { vendor: "Adobe Inc.", currency: "MAD", category: "Software", subtotal: 94.97, tax: 18.99, total: 113.96, notes: "", lineItems: [{ description: "Creative Cloud All Apps", quantity: 1, rate: 54.99 }, { description: "Adobe Stock — 10 credits", quantity: 1, rate: 29.99 }, { description: "Extra storage (1TB)", quantity: 1, rate: 9.99 }] },
+        { vendor: "Blue Bottle Coffee", currency: "MAD", category: "Meals", subtotal: 21, tax: 4.2, total: 25.2, notes: "", lineItems: [{ description: "Cappuccino", quantity: 2, rate: 5.5 }, { description: "Almond Croissant", quantity: 1, rate: 4.75 }, { description: "Cold Brew (L)", quantity: 1, rate: 5.25 }] },
+        { vendor: "Amazon Web Services", currency: "MAD", category: "Hosting", subtotal: 108.51, tax: 0, total: 108.51, notes: "Monthly usage", lineItems: [{ description: "EC2 t3.medium (hrs)", quantity: 744, rate: 0.0416 }, { description: "RDS Postgres", quantity: 744, rate: 0.034 }] },
       ];
       const idx = Math.floor((Date.now() / 1000) % samples.length);
       return { date: todayStr(), ...samples[idx] };
@@ -446,9 +449,9 @@ export const mock = {
       const top = overdue.slice().sort((a, b) => b.total - a.total)[0];
       const topName = top ? (store.clients.find((c) => c.id === top.client_id)?.name || "a client") : null;
       const summary =
-        `You've collected $${revThis.toLocaleString()} this month. ` +
+        `You've collected ${money(revThis)} this month. ` +
         (overdue.length
-          ? `There ${overdue.length === 1 ? "is" : "are"} ${overdue.length} overdue invoice${overdue.length === 1 ? "" : "s"} totaling $${overdueTotal.toLocaleString()}. Consider following up with ${topName} on invoice ${top.invoice_number}.`
+          ? `There ${overdue.length === 1 ? "is" : "are"} ${overdue.length} overdue invoice${overdue.length === 1 ? "" : "s"} totaling ${money(overdueTotal)}. Consider following up with ${topName} on invoice ${top.invoice_number}.`
           : `Nothing is overdue — nicely done. Keep the momentum going.`);
       return { summary, data: { revenueThisMonth: revThis, overdueCount: overdue.length, overdueTotal } };
     },
@@ -456,7 +459,7 @@ export const mock = {
       await delay(1000);
       const inv = invoiceById(invoiceId);
       const c = inv ? store.clients.find((x) => x.id === inv.client_id) : null;
-      const amount = inv ? `$${inv.total.toLocaleString()}` : "$0";
+      const amount = money(inv ? inv.total : 0);
       const name = c?.name || "there";
       const num2 = inv?.invoice_number || "your invoice";
       const bodies = {

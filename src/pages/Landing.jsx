@@ -202,12 +202,12 @@ function InvoiceCard() {
         <div><Label>Invoice</Label><div className="text-[15px] font-bold text-gray-900 mt-1 tabular-nums">INV-0042</div></div>
         <Pill>Sent</Pill>
       </div>
-      {[["Design sprint", "$3,200"], ["Development · 24h", "$2,280"]].map(([d, a]) => (
+      {[["Design sprint", "3,200 MAD"], ["Development · 24h", "2,280 MAD"]].map(([d, a]) => (
         <div key={d} className="flex items-center justify-between text-[12px] py-0.5"><span className="text-gray-500">{d}</span><span className="text-gray-900 font-semibold tabular-nums">{a}</span></div>
       ))}
       <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-gray-100">
         <span className="text-[10px] uppercase tracking-wide text-gray-400 font-semibold">Total</span>
-        <span className="text-[17px] font-bold tabular-nums" style={{ color: BRAND_DARK }}>$5,480</span>
+        <span className="text-[17px] font-bold tabular-nums" style={{ color: BRAND_DARK }}>5,480 MAD</span>
       </div>
       <CardFoot>Nova Retail Group</CardFoot>
     </WallCard>
@@ -218,7 +218,7 @@ function RevenueCard() {
   return (
     <WallCard>
       <div className="flex items-start justify-between mb-3">
-        <div><Label>Total Revenue</Label><div className="text-[26px] font-bold text-gray-900 mt-1 tabular-nums">$311K</div></div>
+        <div><Label>Total Revenue</Label><div className="text-[26px] font-bold text-gray-900 mt-1 tabular-nums">311K MAD</div></div>
         <Pill><TrendingUp size={10} strokeWidth={2.5} /> +12%</Pill>
       </div>
       <div className="flex items-end gap-1.5 h-12">
@@ -238,7 +238,7 @@ function ReceiptCard() {
       <div className="rounded-xl p-3" style={{ background: "#E4ECFB" }}>
         <div className="text-[9px] uppercase tracking-wide font-semibold mb-1" style={{ color: BRAND_DARK }}>Extracted</div>
         <div className="text-[13px] font-semibold text-gray-900">Adobe Inc.</div>
-        <div className="flex items-center justify-between text-[12px] text-gray-600 mt-1"><span>Creative Cloud ×1</span><span className="tabular-nums font-bold text-gray-900">$54.99</span></div>
+        <div className="flex items-center justify-between text-[12px] text-gray-600 mt-1"><span>Creative Cloud ×1</span><span className="tabular-nums font-bold text-gray-900">54.99 MAD</span></div>
       </div>
       <CardFoot>Image → invoice</CardFoot>
     </WallCard>
@@ -250,7 +250,7 @@ function PaymentCard() {
     <WallCard>
       <div className="flex items-center gap-2.5">
         <div className="h-9 w-9 rounded-xl flex items-center justify-center" style={{ background: "#dcfce7" }}><CheckCircle2 size={17} className="text-emerald-600" /></div>
-        <div><Label>Payment received</Label><div className="text-[17px] font-bold text-gray-900 tabular-nums">$7,595.00</div></div>
+        <div><Label>Payment received</Label><div className="text-[17px] font-bold text-gray-900 tabular-nums">7,595.00 MAD</div></div>
       </div>
       <div className="flex items-center justify-between text-[11px] text-gray-500 mt-3"><span>INV-0038 · Harbor & Co.</span><span>Bank transfer</span></div>
     </WallCard>
@@ -263,7 +263,7 @@ function ReminderCard() {
       <div className="flex items-start justify-between mb-2.5"><Label>AI Reminder</Label><Pill><Sparkles size={10} strokeWidth={2.5} /> Drafted</Pill></div>
       <div className="rounded-xl bg-gray-50 border border-gray-100 p-3">
         <div className="flex items-center gap-1.5 mb-1"><BellRing size={12} style={{ color: BRAND_DARK }} /><span className="text-[12px] font-semibold text-gray-900">Friendly nudge</span></div>
-        <p className="text-[11.5px] text-gray-500 leading-snug">"Hi Nova — a gentle reminder that INV-0021 for $2,400 was due last week…"</p>
+        <p className="text-[11.5px] text-gray-500 leading-snug">"Hi Nova — a gentle reminder that INV-0021 for 2,400 MAD was due last week…"</p>
       </div>
       <CardFoot>One click to send</CardFoot>
     </WallCard>
@@ -274,7 +274,7 @@ function PaidCard() {
   return (
     <WallCard>
       <div className="flex items-start justify-between mb-3"><Label>Paid this month</Label><Pill><Check size={10} strokeWidth={3} /> On track</Pill></div>
-      <div className="text-[28px] font-bold text-gray-900 tabular-nums">$42,180</div>
+      <div className="text-[28px] font-bold text-gray-900 tabular-nums">42,180 MAD</div>
       <div className="flex items-center gap-1 mt-2.5">
         {Array.from({ length: 8 }).map((_, i) => <span key={i} className="h-2 flex-1 rounded-full" style={{ background: i < 6 ? BRAND : "#e5e7eb" }} />)}
       </div>
@@ -291,8 +291,8 @@ function ClientCard() {
         <div><div className="text-[13px] font-semibold text-gray-900">Brightline Studios</div><div className="text-[11px] text-gray-400">Casablanca, Morocco</div></div>
       </div>
       <div className="grid grid-cols-2 gap-2">
-        <div><div className="text-[9px] uppercase tracking-wide text-gray-400 font-semibold">Billed</div><div className="text-[13px] font-bold text-gray-900 tabular-nums">$18.4K</div></div>
-        <div><div className="text-[9px] uppercase tracking-wide text-gray-400 font-semibold">Owed</div><div className="text-[13px] font-bold tabular-nums" style={{ color: "#b45309" }}>$3.8K</div></div>
+        <div><div className="text-[9px] uppercase tracking-wide text-gray-400 font-semibold">Billed</div><div className="text-[13px] font-bold text-gray-900 tabular-nums">18.4K MAD</div></div>
+        <div><div className="text-[9px] uppercase tracking-wide text-gray-400 font-semibold">Owed</div><div className="text-[13px] font-bold tabular-nums" style={{ color: "#b45309" }}>3.8K MAD</div></div>
       </div>
     </WallCard>
   );
@@ -303,7 +303,7 @@ function StatCard2() {
     <WallCard>
       <div className="flex items-center gap-2.5">
         <div className="h-9 w-9 rounded-xl flex items-center justify-center" style={{ background: "#E4ECFB" }}><Wallet size={16} style={{ color: BRAND_DARK }} /></div>
-        <div><Label>Outstanding</Label><div className="text-[17px] font-bold text-gray-900 tabular-nums">$23,760</div></div>
+        <div><Label>Outstanding</Label><div className="text-[17px] font-bold text-gray-900 tabular-nums">23,760 MAD</div></div>
       </div>
       <div className="flex items-center justify-between text-[11px] mt-3"><span className="text-gray-500">12 open invoices</span><Pill tone="rose">3 overdue</Pill></div>
     </WallCard>
@@ -317,7 +317,7 @@ function ExpenseCard() {
         <div className="h-9 w-9 rounded-xl flex items-center justify-center" style={{ background: "#fbf1e2" }}><Receipt size={16} style={{ color: "#b45309" }} /></div>
         <div><Label>Expense</Label><div className="text-[14px] font-bold text-gray-900">AWS · Hosting</div></div>
       </div>
-      <div className="flex items-center justify-between text-[12px] mt-3"><span className="text-gray-500">Jul 2026 · card ****3140</span><span className="tabular-nums font-bold text-gray-900">$128.40</span></div>
+      <div className="flex items-center justify-between text-[12px] mt-3"><span className="text-gray-500">Jul 2026 · card ****3140</span><span className="tabular-nums font-bold text-gray-900">128.40 MAD</span></div>
     </WallCard>
   );
 }
@@ -472,7 +472,7 @@ function CtaInv() {
         <span className="text-[12px] font-bold tabular-nums text-white/90">INV-0042</span>
         <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-white/20">Paid</span>
       </div>
-      <div className="text-[17px] font-bold tabular-nums mt-1">$5,480</div>
+      <div className="text-[17px] font-bold tabular-nums mt-1">5,480 MAD</div>
     </CtaCard>
   );
 }
@@ -480,7 +480,7 @@ function CtaPay() {
   return (
     <CtaCard>
       <div className="text-[9px] uppercase tracking-wide text-white/60 font-semibold">Payment received</div>
-      <div className="text-[16px] font-bold tabular-nums mt-0.5">$7,595.00</div>
+      <div className="text-[16px] font-bold tabular-nums mt-0.5">7,595.00 MAD</div>
     </CtaCard>
   );
 }
@@ -488,7 +488,7 @@ function CtaReceipt() {
   return (
     <CtaCard>
       <div className="text-[9px] uppercase tracking-wide text-white/60 font-semibold">AI parsed</div>
-      <div className="flex items-center justify-between mt-1"><span className="text-[12px] font-semibold">Adobe Inc.</span><span className="text-[13px] font-bold tabular-nums">$54.99</span></div>
+      <div className="flex items-center justify-between mt-1"><span className="text-[12px] font-semibold">Adobe Inc.</span><span className="text-[13px] font-bold tabular-nums">54.99 MAD</span></div>
     </CtaCard>
   );
 }
@@ -496,7 +496,7 @@ function CtaRevenue() {
   return (
     <CtaCard>
       <div className="text-[9px] uppercase tracking-wide text-white/60 font-semibold">Revenue · +12%</div>
-      <div className="text-[19px] font-bold tabular-nums mt-0.5">$311K</div>
+      <div className="text-[19px] font-bold tabular-nums mt-0.5">311K MAD</div>
     </CtaCard>
   );
 }

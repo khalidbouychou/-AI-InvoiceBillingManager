@@ -93,7 +93,7 @@ function build() {
   const settings = {
     user_id: user.id, company_name: "Bouychou Studio", logo_url: "",
     address: "12 Boulevard Zerktouni, Casablanca 20250, Morocco", email: user.email, phone: "+212 522-47-81-92",
-    currency: "USD", tax_rate: 8.5, invoice_prefix: "INV-", next_seq: 1, accent_color: "",
+    currency: "MAD", tax_rate: 20, invoice_prefix: "INV-", next_seq: 1, accent_color: "",
   };
 
   const clients = CLIENT_NAMES.map((name, i) => ({
@@ -120,7 +120,7 @@ function build() {
       const qty = c[3] === "hour" ? pick([8, 12, 16, 24, 32, 40]) : 1;
       rawItems.push({ description: c[0], quantity: qty, rate: c[2] });
     }
-    const taxRate = rnd() < 0.7 ? 8.5 : 0;
+    const taxRate = rnd() < 0.7 ? 20 : 0;
     const discount = rnd() < 0.15 ? [50, 100, 150][ri(3)] : 0;
     const totals = computeTotals(rawItems, taxRate, discount);
     const roll = rnd();
@@ -132,7 +132,7 @@ function build() {
     }
     invoices.push({
       id: nid("inv"), client_id: pick(clients).id, invoice_number: `INV-${String(seq).padStart(4, "0")}`,
-      status, issue_date: issue, due_date: due, currency: "USD",
+      status, issue_date: issue, due_date: due, currency: "MAD",
       tax_rate: taxRate, discount: totals.discount, subtotal: totals.subtotal, tax_amount: totals.taxAmount, total: totals.total,
       notes: "Thank you for your business.", terms: "Payment due within 30 days.",
       paid_at, created_at: iso(daysAgo(issueDaysAgo)),
@@ -155,7 +155,7 @@ function build() {
     const [vendor, category, mn, mx] = pick(EXPENSE_VENDORS);
     expenses.push({
       id: nid("exp"), vendor, category, expense_date: ymd(daysAgo(ri(180))),
-      amount: round2(mn + rnd() * (mx - mn)), currency: "USD", notes: "", created_at: iso(daysAgo(ri(180))),
+      amount: round2(mn + rnd() * (mx - mn)), currency: "MAD", notes: "", created_at: iso(daysAgo(ri(180))),
     });
   }
 

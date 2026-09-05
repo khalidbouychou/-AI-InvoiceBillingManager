@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
   },
   cDesc: { flex: 1 },
   cQty: { width: 50, textAlign: "right" },
-  cRate: { width: 70, textAlign: "right" },
-  cAmt: { width: 80, textAlign: "right" },
+  cRate: { width: 88, textAlign: "right" },
+  cAmt: { width: 92, textAlign: "right" },
   totals: { marginTop: 16, marginLeft: "auto", width: 220 },
   totalRow: { flexDirection: "row", justifyContent: "space-between", paddingVertical: 3 },
   grandRow: {
