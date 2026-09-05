@@ -288,7 +288,7 @@ function ClientCard() {
     <WallCard>
       <div className="flex items-center gap-2.5 mb-3">
         <div className="h-9 w-9 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{ background: `linear-gradient(135deg,${BRAND},${BRAND_DARK})` }}>B</div>
-        <div><div className="text-[13px] font-semibold text-gray-900">Brightline Studios</div><div className="text-[11px] text-gray-400">New York, NY</div></div>
+        <div><div className="text-[13px] font-semibold text-gray-900">Brightline Studios</div><div className="text-[11px] text-gray-400">Casablanca, Morocco</div></div>
       </div>
       <div className="grid grid-cols-2 gap-2">
         <div><div className="text-[9px] uppercase tracking-wide text-gray-400 font-semibold">Billed</div><div className="text-[13px] font-bold text-gray-900 tabular-nums">$18.4K</div></div>

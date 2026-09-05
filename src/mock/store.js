@@ -15,8 +15,8 @@ const CLIENT_NAMES = [
   "Summit Media", "Ironclad Security", "Lumen Analytics", "Copperfield Design",
   "Riverstone Legal", "Vantage Partners", "Blue Orbit Labs", "Meridian Health",
 ];
-const CITIES = ["San Francisco, CA", "New York, NY", "Boston, MA", "Miami, FL", "Austin, TX", "Seattle, WA", "Chicago, IL", "Denver, CO"];
-const STREETS = ["Market St", "Greene St", "Wharf Rd", "Ocean Dr", "Congress Ave", "Pine St", "Broadway"];
+const CITIES = ["Casablanca", "Rabat", "Marrakech", "Tanger", "Fès", "Agadir", "Meknès", "Kénitra"];
+const STREETS = ["Boulevard Mohammed V", "Avenue Hassan II", "Rue Ibn Battouta", "Boulevard Zerktouni", "Avenue des FAR", "Rue Al Massira", "Boulevard Anfa"];
 
 const CATALOG = [
   ["Brand & UI design sprint", "One-week design engagement", 3200, "project"],
@@ -88,11 +88,11 @@ export function effectiveStatus(inv) {
 }
 
 function build() {
-  const user = { id: "user_demo", name: "Alex Chen", email: "alex@timetoprogram.com", created_at: iso(daysAgo(120)) };
+  const user = { id: "user_demo", name: "Khalid Bouychou", email: "khalid@bouychou.ma", created_at: iso(daysAgo(120)) };
 
   const settings = {
-    user_id: user.id, company_name: "Chen Studio", logo_url: "",
-    address: "410 Townsend St, San Francisco, CA 94107", email: user.email, phone: "+1 (415) 555-0192",
+    user_id: user.id, company_name: "Bouychou Studio", logo_url: "",
+    address: "12 Boulevard Zerktouni, Casablanca 20250, Morocco", email: user.email, phone: "+212 522-47-81-92",
     currency: "USD", tax_rate: 8.5, invoice_prefix: "INV-", next_seq: 1, accent_color: "",
   };
 
@@ -100,8 +100,8 @@ function build() {
     id: nid("cl"), name,
     email: `billing@${slug(name)}.com`,
     company: name.replace(/ (Group|Studios|Co\.?|Partners|Labs)$/i, ""),
-    phone: `+1 (${200 + ri(700)}) 555-0${100 + ri(900)}`,
-    address: `${100 + ri(900)} ${pick(STREETS)}, ${pick(CITIES)}`,
+    phone: `+212 6${10 + ri(90)}-${100 + ri(900)}-${100 + ri(900)}`,
+    address: `${100 + ri(900)} ${pick(STREETS)}, ${pick(CITIES)}, Morocco`,
     notes: "", created_at: iso(daysAgo(100 - i * 3)),
   }));
 

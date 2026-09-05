@@ -132,7 +132,7 @@ function CompanySection() {
             </div>
             <div>
               <FieldLabel>Phone</FieldLabel>
-              <Input value={form.phone} onChange={set("phone")} placeholder="+1 (555) 000-0000" />
+              <Input value={form.phone} onChange={set("phone")} placeholder="+212 600-000-000" />
             </div>
           </div>
           <div>

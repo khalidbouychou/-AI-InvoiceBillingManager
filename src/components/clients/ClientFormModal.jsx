@@ -98,7 +98,7 @@ export function ClientFormModal({ open, onClose, client }) {
                 </Field>
               </div>
               <Field label="Phone">
-                <Input value={form.phone} onChange={set("phone")} placeholder="+1 (555) 000-0000" />
+                <Input value={form.phone} onChange={set("phone")} placeholder="+212 600-000-000" />
               </Field>
               <Field label="Address">
                 <Input value={form.address} onChange={set("address")} placeholder="123 Main St, City, State" />

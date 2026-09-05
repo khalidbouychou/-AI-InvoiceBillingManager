@@ -460,9 +460,9 @@ export const mock = {
       const name = c?.name || "there";
       const num2 = inv?.invoice_number || "your invoice";
       const bodies = {
-        friendly: `Hi ${name},\n\nJust a friendly reminder that invoice ${num2} for ${amount} is now due. If you've already sent payment, please disregard this note — otherwise, we'd appreciate it whenever you get a chance.\n\nThank you!\nChen Studio`,
-        firm: `Hi ${name},\n\nThis is a reminder that invoice ${num2} for ${amount} is past due. Please arrange payment at your earliest convenience to keep your account in good standing.\n\nRegards,\nChen Studio`,
-        final: `Hi ${name},\n\nThis is a final notice regarding invoice ${num2} for ${amount}, which is significantly overdue. Please settle the outstanding balance immediately to avoid further action.\n\nChen Studio`,
+        friendly: `Hi ${name},\n\nJust a friendly reminder that invoice ${num2} for ${amount} is now due. If you've already sent payment, please disregard this note — otherwise, we'd appreciate it whenever you get a chance.\n\nThank you!\nBouychou Studio`,
+        firm: `Hi ${name},\n\nThis is a reminder that invoice ${num2} for ${amount} is past due. Please arrange payment at your earliest convenience to keep your account in good standing.\n\nRegards,\nBouychou Studio`,
+        final: `Hi ${name},\n\nThis is a final notice regarding invoice ${num2} for ${amount}, which is significantly overdue. Please settle the outstanding balance immediately to avoid further action.\n\nBouychou Studio`,
       };
       return { draft: { subject: `Reminder: Invoice ${num2} (${amount})`, body: bodies[tone] || bodies.friendly }, meta: { daysOverdue: 0, to: c?.email || "" } };
     },
