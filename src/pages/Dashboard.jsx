@@ -37,11 +37,11 @@ import { aiApi } from "@/api/ai";
 import { formatMoney, formatDate } from "@/lib/utils";
 
 // Logo palette
-const T1 = "#2dd4bf"; // teal-400
-const T2 = "#14b8a6"; // teal-500
-const T3 = "#0f766e"; // teal-700
+const T1 = "#4382DF"; // brand P3 — bright blue
+const T2 = "#4647AE"; // brand P2 — indigo
+const T3 = "#112E81"; // brand P1 — deep navy
 
-const STATUS_COLORS = { draft: "#94a3b8", sent: "#5eead4", overdue: "var(--danger)", paid: T2 };
+const STATUS_COLORS = { draft: "#94a3b8", sent: "#7FA9E8", overdue: "var(--danger)", paid: T2 };
 
 const tooltipStyle = {
   background: "var(--surface)",
@@ -150,7 +150,7 @@ function AISummaryCard({ stats }) {
   return (
     <Card padding="lg" className="relative overflow-hidden">
       <div className="relative flex items-start gap-4">
-        <div className="h-11 w-11 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-[0_8px_20px_-6px_rgba(13,148,136,0.6)]" style={{ background: `linear-gradient(135deg,${T1},${T3})` }}>
+        <div className="h-11 w-11 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-[0_8px_20px_-6px_rgba(70,71,174,0.6)]" style={{ background: `linear-gradient(135deg,${T1},${T3})` }}>
           <Sparkles size={20} />
         </div>
         <div className="flex-1 min-w-0">
@@ -311,7 +311,7 @@ function StatusDonutCard({ reports, total }) {
               <PieChart>
                 <defs>
                   <linearGradient id="gPaid" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor={T1} /><stop offset="100%" stopColor={T3} /></linearGradient>
-                  <linearGradient id="gSent" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#99f6e4" /><stop offset="100%" stopColor="#2dd4bf" /></linearGradient>
+                  <linearGradient id="gSent" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#C9DEF6" /><stop offset="100%" stopColor="#7FA9E8" /></linearGradient>
                   <linearGradient id="gOverdue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#fb7185" /><stop offset="100%" stopColor="#e11d48" /></linearGradient>
                   <linearGradient id="gDraft" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#cbd5e1" /><stop offset="100%" stopColor="#94a3b8" /></linearGradient>
                 </defs>

@@ -1,5 +1,5 @@
 /**
- * Brand mark for Invoicer — a teal invoice document with billing rows and a
+ * Brand mark for Invoicer — a blue invoice document with billing rows and a
  * "$" seal. Renders at 48px, no frame.
  */
 const AILogo = () => {
@@ -10,13 +10,13 @@ const AILogo = () => {
         height="42"
         viewBox="3.5 1 17 22"
         fill="none"
-        className="drop-shadow-[0_4px_10px_rgba(13,148,136,0.25)]"
+        className="drop-shadow-[0_4px_10px_rgba(70,71,174,0.25)]"
       >
         <defs>
           <linearGradient id="inv-doc" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#2dd4bf" />
-            <stop offset="55%" stopColor="#14b8a6" />
-            <stop offset="100%" stopColor="#0f766e" />
+            <stop offset="0%" stopColor="#7FA9E8" />
+            <stop offset="55%" stopColor="#4382DF" />
+            <stop offset="100%" stopColor="#112E81" />
           </linearGradient>
         </defs>
 
@@ -42,7 +42,7 @@ const AILogo = () => {
           fontSize="5.6"
           fontWeight="800"
           fontFamily="Geist, Inter, sans-serif"
-          fill="#0f766e"
+          fill="#112E81"
         >
           $
         </text>

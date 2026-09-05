@@ -98,6 +98,23 @@ Colors come from CSS custom properties defined once on `:root`/`[data-theme="lig
 className="bg-[var(--surface)] border-[var(--border)] text-[var(--ink-muted)]"
 ```
 
+### Brand palette
+
+Four brand colors, documented at the top of `src/index.css`. Every accent token resolves to one of them; keep new UI on this ramp.
+
+| | Hex | RGB | Role |
+|---|---|---|---|
+| P1 | `#112E81` | `17, 46, 129` | deep navy — `--accent-strong` (light), `--accent-hero` |
+| P2 | `#4647AE` | `70, 71, 174` | indigo — `--accent` (light), solid fills with white text |
+| P3 | `#4382DF` | `67, 130, 223` | bright blue — `--accent-hero-2`, `--accent` (dark), charts |
+| P4 | `#AACCD6` | `170, 204, 214` | pale blue — `--accent-strong` (dark), tints |
+
+Supporting shades derived from these: `#7FA9E8`, `#C9DEF6`, `#E4ECFB` (P3 tints), `#1B2A6B`, `#101A42` (P1 shades). Surfaces, ink, and borders are navy-tinted neutrals derived from P1.
+
+`--success`, `--warning`, and `--danger` stay green/amber/rose — they are semantic status colors, deliberately outside the brand ramp.
+
+Chart series colors live in `src/pages/Dashboard.jsx` as `T1`/`T2`/`T3` (P3/P2/P1). `InvoiceDocument.jsx` and `public/favicon.svg` carry their own hardcoded copies of the palette because neither can read CSS variables.
+
 **Do not use Tailwind's built-in color palette** (`bg-slate-100`, `text-gray-500`, …) — it will not follow the theme. Token set: `--bg`, `--surface`, `--surface-2`, `--border`, `--ink`, `--ink-muted`, `--accent`, `--accent-strong`, `--accent-soft`, `--accent-hero`, `--accent-hero-2`, `--success`, `--warning`, `--danger`, plus `--shadow-card` / `--shadow-hover` (exposed as `.shadow-card` / `.shadow-hover`). Utility classes `.font-display`, `.font-serif`, and `.tabular` (tabular numerals — use on money and metrics) are also defined there.
 
 `src/components/ui/` holds the primitives (Button, Card, Badge, Input, Tabs, Avatar, Checkbox, Skeleton, EmptyState, IconButton). Variants use `class-variance-authority`; merge incoming classes with `cn()` from `@/lib/utils` (clsx + tailwind-merge). Extend an existing primitive's `cva` variants rather than hand-rolling a one-off styled element.

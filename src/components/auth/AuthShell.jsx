@@ -27,7 +27,7 @@ function BrandPanel({ headline, subhead }) {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(140deg, #0b2b27 0%, #0f766e 38%, #0c3b36 72%, #071a18 100%)",
+            "linear-gradient(140deg, #0F1A44 0%, #112E81 38%, #16266A 72%, #070E24 100%)",
         }}
       />
 
@@ -36,7 +36,7 @@ function BrandPanel({ headline, subhead }) {
         className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(52,211,153,0.5) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(170, 204, 214,0.5) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
         animate={{
@@ -50,7 +50,7 @@ function BrandPanel({ headline, subhead }) {
         className="absolute -bottom-40 -left-32 w-[460px] h-[460px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(13,148,136,0.6) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(70,71,174,0.6) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
         animate={{
@@ -171,10 +171,10 @@ export function AuthPrimaryButton({ children, disabled, ...props }) {
     <motion.button
       whileTap={{ scale: 0.985 }}
       disabled={disabled}
-      className="relative w-full h-12 rounded-2xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 overflow-hidden shadow-[0_8px_24px_-8px_rgba(13,148,136,0.55)] transition-all duration-200 hover:shadow-[0_12px_28px_-8px_rgba(13,148,136,0.7)] disabled:opacity-60 disabled:cursor-not-allowed"
+      className="relative w-full h-12 rounded-2xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 overflow-hidden shadow-[0_8px_24px_-8px_rgba(70,71,174,0.55)] transition-all duration-200 hover:shadow-[0_12px_28px_-8px_rgba(70,71,174,0.7)] disabled:opacity-60 disabled:cursor-not-allowed"
       style={{
         background:
-          "linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #0f766e 100%)",
+          "linear-gradient(135deg, #4382DF 0%, #4647AE 50%, #112E81 100%)",
       }}
       {...props}
     >

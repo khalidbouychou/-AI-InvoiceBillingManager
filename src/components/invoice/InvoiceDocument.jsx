@@ -8,10 +8,10 @@ import {
 } from "@react-pdf/renderer";
 import { formatMoney, formatDate } from "@/lib/utils";
 
-const TEAL = "#0d9488";
-const DARK = "#0c1a17";
-const MUTED = "#5c7570";
-const LINE = "#e2ece9";
+const BRAND = "#4647AE";
+const DARK = "#0B1533";
+const MUTED = "#5B6B8C";
+const LINE = "#DFE6F3";
 
 const styles = StyleSheet.create({
   page: {
@@ -24,15 +24,15 @@ const styles = StyleSheet.create({
   logo: { width: 48, height: 48, objectFit: "contain", marginBottom: 8 },
   company: { fontSize: 15, fontFamily: "Helvetica-Bold", color: DARK },
   muted: { color: MUTED },
-  invoiceTitle: { fontSize: 26, fontFamily: "Helvetica-Bold", color: TEAL, letterSpacing: 1 },
+  invoiceTitle: { fontSize: 26, fontFamily: "Helvetica-Bold", color: BRAND, letterSpacing: 1 },
   badge: {
     marginTop: 6,
     alignSelf: "flex-end",
     paddingVertical: 3,
     paddingHorizontal: 8,
     borderRadius: 10,
-    backgroundColor: "#d3f4ec",
-    color: TEAL,
+    backgroundColor: "#E4ECFB",
+    color: BRAND,
     fontSize: 9,
     fontFamily: "Helvetica-Bold",
     textTransform: "uppercase",
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: DARK,
   },
-  grand: { fontSize: 14, fontFamily: "Helvetica-Bold", color: TEAL },
+  grand: { fontSize: 14, fontFamily: "Helvetica-Bold", color: BRAND },
   notes: { marginTop: 30, paddingTop: 12, borderTopWidth: 1, borderTopColor: LINE },
   footer: { marginTop: 30, textAlign: "center", color: MUTED, fontSize: 8 },
 });
